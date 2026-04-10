@@ -11,18 +11,18 @@
 # The site_name is shown in the page header and the browser window title
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_name
-site_name = "Test de zensical"
+site_name = "Intranet du Dept MEE"
 
 # The site_description is included in the HTML head and should contain a
 # meaningful description of the site content for use by search engines.
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_description
-site_description = "Shitty zensical crash test"
+site_description = "Documentation technique informatique à destination des personnels du département MEE"
 
 # The site_author attribute. This is used in the HTML head element.
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_author
-site_author = "JuanXmass the Great"
+site_author = "Jean-Noël Bazin"
 
 # The site_url is the canonical URL for your site. When building online
 # documentation you should set this.
@@ -33,9 +33,9 @@ site_author = "JuanXmass the Great"
 # fragment.
 #
 # Read more: https://zensical.org/docs/setup/basics/#copyright
-copyright = """
-Copyright &copy; 2026 The authors JuanXmass the Great
-"""
+#copyright = """
+#Copyright &copy; 2026 The authors JuanXmass the Great
+#"""
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
 # If you decide not to define a navigation here then Zensical will simply
@@ -46,12 +46,14 @@ Copyright &copy; 2026 The authors JuanXmass the Great
 # Read more: https://zensical.org/docs/setup/navigation/
 nav = [
   { "Accueil" = "index.md" },
+
   { "Généralités" = [
     { "Support Informatique" = "generalites/support.md" },
     { "Marché informatique" = "generalites/marche-informatique6.md" },
     { "Sirepa" = "generalites/sirepa.md" },
     { "Ajout utilisateurs externes" = "generalites/it-users.md" },
   ]},
+
   { "Poste de travail" = [
     { "Configuration Ubuntu 24.04" = "poste-travail/ubuntu24.md" },
     { "Imprimantes sur Ubuntu SALSA" = "poste-travail/imprimante-ubuntu.md" },
@@ -61,7 +63,6 @@ nav = [
     { "Stockage de ses données" = "poste-travail/stockage-poste.md" },
     { "Timer systemd" = "poste-travail/timer-systemd.md" },
   ] },
-
 
   { "HPC Computing" = [
     { "Minos - MEE HPC" = "calcul/minos.md" },
@@ -178,7 +179,7 @@ favicon = "assets/favicon.png"
 # Read more:
 # - https://zensical.org/docs/setup/language/
 #
-language = "en"
+language = "fr"
 
 # Zensical provides a number of feature toggles that change the behavior
 # of the documentation site.
@@ -361,6 +362,7 @@ logo = "assets/logo-alarach.svg"
 scheme = "default"
 toggle.icon = "lucide/sun"
 toggle.name = "Switch to dark mode"
+
 
 [[project.theme.palette]]
 scheme = "slate"
