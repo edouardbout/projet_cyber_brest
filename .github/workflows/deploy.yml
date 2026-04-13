@@ -16,18 +16,27 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Important pour les dates de modif des pages
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
 
-      - name: Build with Zensical
+      - name: Install Zensical
         run: |
-          echo "Génération du site depuis le dossier docs..."
+          pip install zensical
+
+      - name: Build Website
+        run: |
+          zensical build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './docs'
+          # Zensical génère le site final dans un dossier nommé 'site'
+          path: './site' 
 
       - name: Deploy to GitHub Pages
         id: deployment
