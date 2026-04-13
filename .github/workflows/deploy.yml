@@ -1,0 +1,36 @@
+name: Deploy Zensical Site
+on:
+  push:
+    branches:
+      - main  # Déclenche le déploiement à chaque push sur la branche main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # Ici, on simule la construction du site. 
+      # Note : Si Zensical nécessite une installation spécifique, il faudra l'ajouter ici.
+      - name: Build with Zensical
+        run: |
+          echo "Génération du site depuis le dossier docs..."
+          # Commande de build spécifique à Zensical (ex: zensical build)
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs' # On indique que le site se trouve dans le dossier docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
