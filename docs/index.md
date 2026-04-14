@@ -1,29 +1,42 @@
-# Support informatique MEE (Mathematical and Electrical Engineering)
+# Active Directory Attack Simulator & Gamification
 
-L’organisation du support informatique du département MEE repose globalement sur les moyens de la Direction de l’Infrastructure et du Système d’Information (DISI) d’IMT Atlantique appuyée localement par l’action des Correspondants Informatique (CI).
+Welcome to the official documentation of the **S6B2 Cyber Project** at IMT Atlantique. Our mission is to transform complex Active Directory (AD) attack path simulations into a visual, interactive, and educational experience.
 
-Volet administratif de l'intranet MEE : [https://intranet.imt-atlantique.fr/mee/](https://intranet.imt-atlantique.fr/mee/)
+---
 
-## Le support DISI
+## Project Context
 
-En cas d’expression de besoin, de difficulté d’utilisation ou de dysfonctionnement des moyens informatique au département MEE, l’utilisateur peut s’adresser au Pôle Support et Assistance (PSA) de la DISI par email adressé à : [support-disi@imt-atlantique.fr](mailto:support-disi@imt-atlantique.fr), en associant les correspondants informatique du département MEE en copie au message.
+This project was commissioned by **Alexandre REIFFERS-MASON**, Researcher and Professor at **IMT Atlantique**. 
 
-La demande  de support informatique sera automatiquement enregistrée et suivie dans un référentiel de gestion de ticket (OTRS) qui informera l’utilisateur à chaque évolution de son traitement. En complément, l’utilisateur des moyens informatique du département MEE peut utilement consulter l’intranet de la DISI qui comporte de nombreuses informations :
+Our work is built upon the foundations of the [**Markov_Budget**](https://github.com/Lilianltd/Markov_Budget/) project. The original pipeline focuses on:
+* **Automated Generation**: Creating randomized AD environments using `adsimulator`.
 
-- [La Météo des Services](https://intranet.imt-atlantique.fr/catalogue-disi/meteo-des-services/)
-- [Le Catalogue des Services](https://intranet.imt-atlantique.fr/catalogue-disi/meteo-des-services/)
-- [Le Service de Support DISI](https://intranet.imt-atlantique.fr/catalogue-disi/support/)
+* **Mathematical Modeling**: Converting attack graphs into probabilistic transition matrices.
 
-## Le support local
+* **Defense Optimization**: Using Monte Carlo simulations and Dirichlet distributions to find optimal budget allocations to minimize risk.
 
-Le support informatique local du département MEE est assuré par les Correspondants Informatique (CI) dans le cadre des dispositions de la [note de service n°02-2020-IMT Atlantique](./files/02-2020-1-Note-organisation_Role-mission-correspondant-informatique.pdf] établissant les missions de base :
+---
 
-- accompagner un nouvel arrivant dans l’utilisation des moyens informatique;
-- guider l’utilisateur de son entité pour un usage efficient des moyens informatique;
-- guider l’utilisateur vers les services de support et assurer le lien avec la DISI;
+## Project Management: Agile Method
 
-et les missions spécifiques pour les départements :
+To ensure efficiency and continuous delivery, our team operates using the **Agile methodology**. We have defined 3 core **User Stories** that guide our development sprints:
 
-- commander les matériels et logiciels informatique acquis sur les budgets de l’entité;
-- effectuer l’administration de base (génération des postes, gestion des prises réseau, suivi d’inventaire, etc ...);
-- gérer les moyens informatiques des salle de TP « fléchées département » en concertation avec la DISI.
+* **US #1: Attack Dataset** : Strengthening and diversifying the generation of attack data to provide a rich base for machine learning.
+
+* **US #2: Interactive Visualization** : Developing the core product: a ludic interface where users can visualize and interact with AD attack paths.
+
+* **US #3: Documentation Portal** : Creating this comprehensive website to popularize our findings and document the project's technical architecture.
+
+---
+
+## The Team
+
+We are 5 students from IMT Atlantique, dedicated to bridging the gap between mathematical simulation and cybersecurity education:
+
+| Name | TAF d'origine |
+| :--- | :--- |
+| **Edouard BOUTOILLE** | TEE |
+| **Julien PICOT** | HEALTH |
+| **Pierre LENOIR** | TEE |
+| **Mael HUSSANT** | CYBER |
+| **Tristan BLANC** | HEALTH |
