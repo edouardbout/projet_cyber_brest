@@ -116,7 +116,7 @@ This turns the problem into a constrained path search in the graph.
 
 ## Example Diagram
 
-![Shadow Admin Path](../assets/shadowtest.png)
+![Shadow Admin Path](../assets/shadowtest.jpeg)
 
 ---
 
