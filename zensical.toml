@@ -33,8 +33,8 @@ site_url = "https://edouardbout.github.io/projet_cyber_brest/"
 # fragment.
 #
 # Read more: https://zensical.org/docs/setup/basics/#copyright
-copyright = """
-Copyright &copy; 2026 — <a href="https://github.com/edouardbout/projet_cyber_brest">Projet cyber S6B2 IMTA</a>
+#copyright = """
+#Copyright &copy; 2026 — <a href="https://github.com/edouardbout/projet_cyber_brest">Projet cyber S6B2 IMTA</a>
 """
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
@@ -45,7 +45,7 @@ Copyright &copy; 2026 — <a href="https://github.com/edouardbout/projet_cyber_b
 #
 # Read more: https://zensical.org/docs/setup/navigation/
 nav = [
-  { "Accueil" = "index.md" },
+  { "Home" = "index.md" },
 
   { "Généralités" = [
     { "Support Informatique" = "generalites/support.md" },
@@ -179,7 +179,7 @@ favicon = "assets/image_page_accueil.jpeg"
 # Read more:
 # - https://zensical.org/docs/setup/language/
 #
-language = "fr"
+language = "en"
 
 # Zensical provides a number of feature toggles that change the behavior
 # of the documentation site.
