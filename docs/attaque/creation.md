@@ -1,4 +1,4 @@
-# Configuration Ubuntu 24.04 Salsa
+# Creation des attaques
 
 ## Création d’un compte utilisateur dans le groupe sudo
 

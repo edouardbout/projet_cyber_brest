@@ -54,14 +54,14 @@ nav = [
     { "Ajout utilisateurs externes" = "generalites/it-users.md" },
   ]},
 
-  { "Poste de travail" = [
-    { "Configuration Ubuntu 24.04" = "poste-travail/ubuntu24.md" },
-    { "Imprimantes sur Ubuntu SALSA" = "poste-travail/imprimante-ubuntu.md" },
-    { "Aide mémoire Linux" = "poste-travail/linux.md" },
-    { "Configuration Windows 10" = "poste-travail/windows10.md" },
-    { "MacOS" = "poste-travail/macOS.md" },
-    { "Stockage de ses données" = "poste-travail/stockage-poste.md" },
-    { "Timer systemd" = "poste-travail/timer-systemd.md" },
+  { "Nos Attaques" = [
+    { "Création des attaques" = "attaque/creation.md" },
+    { "Shortest path" = "attaque/shortest.md" },
+    { "Kerberos" = "attaque/kerberos.md" },
+    { "Configuration Windows 10" = "attaque/windows10.md" },
+    { "MacOS" = "attaque/macOS.md" },
+    { "Stockage de ses données" = "attaque/stockage-poste.md" },
+    { "Timer systemd" = "attaque/timer-systemd.md" },
   ] },
 
   { "HPC Computing" = [

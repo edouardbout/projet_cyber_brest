@@ -1,4 +1,4 @@
-# Installation imprimante sur Ubuntu Salsa
+# Shortest Path
 
 
 Suite aux travaux de la DISI pour la mise en œuvre d'un nouveau système d'authentification commun avec ex-Mines Nantes (NAD : New Active Directory), l'ancien serveur d'impression //VSS-WINPRINT est remplacé sur le site Brest par : //imp-br-01.ad.imta.fr
