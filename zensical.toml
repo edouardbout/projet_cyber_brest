@@ -11,18 +11,18 @@
 # The site_name is shown in the page header and the browser window title
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_name
-site_name = "Documentation projet cyber : génération d'ataques sur un Active Directory"
+site_name = "Documentation projet cyber S6B2 IMTA"
 
 # The site_description is included in the HTML head and should contain a
 # meaningful description of the site content for use by search engines.
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_description
-site_description = "Documentation technique informatique à destination des personnels du département MEE"
+site_description = "Ce site a pour but de documenter le projet étudiant suivant : Simulation et documentation d'attaques sur Active Directory via ADSimulator"
 
 # The site_author attribute. This is used in the HTML head element.
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_author
-site_author = "Jean-Noël Bazin"
+site_author = "Edouard BOUTOILLE, Julien PICOT, Pierre LENOIR, Mael HUSSANT, Tristan BLANC"
 
 # The site_url is the canonical URL for your site. When building online
 # documentation you should set this.
@@ -33,9 +33,9 @@ site_url = "https://edouardbout.github.io/projet_cyber_brest/"
 # fragment.
 #
 # Read more: https://zensical.org/docs/setup/basics/#copyright
-#copyright = """
-#Copyright &copy; 2026 The authors JuanXmass the Great
-#"""
+copyright = """
+Copyright &copy; 2026 — <a href="https://github.com/edouardbout/projet_cyber_brest">Projet cyber S6B2 IMTA</a>
+"""
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
 # If you decide not to define a navigation here then Zensical will simply
@@ -164,7 +164,7 @@ extra_css = ["stylesheets/extra.css"]
 # - https://zensical.org/docs/setup/logo-and-icons/#favicon
 # - https://developer.mozilla.org/en-US/docs/Glossary/Favicon
 #
-favicon = "assets/favicon.png"
+favicon = "assets/image_page_accueil.jpg"
 
 # Zensical supports more than 60 different languages. This means that the
 # labels and tooltips that Zensical's templates produce are translated.
