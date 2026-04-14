@@ -9,6 +9,7 @@ Welcome to the official documentation of the **S6B2 Cyber Project** at IMT Atlan
 This project was commissioned by **Alexandre REIFFERS-MASON**, Researcher and Professor at **IMT Atlantique**. 
 
 Our work is built upon the foundations of the [**Markov_Budget**](https://github.com/Lilianltd/Markov_Budget/) project. The original pipeline focuses on:
+
 * **Automated Generation**: Creating randomized AD environments using `adsimulator`.
 
 * **Mathematical Modeling**: Converting attack graphs into probabilistic transition matrices.
@@ -31,12 +32,12 @@ To ensure efficiency and continuous delivery, our team operates using the **Agil
 
 ## The Team
 
-We are 5 students from IMT Atlantique, dedicated to bridging the gap between mathematical simulation and cybersecurity education:
+We are 5 students from IMT Atlantique, dedicated to this one month project:
 
-| Name | TAF d'origine |
+| Name | from this TAF |
 | :--- | :--- |
-| **Edouard BOUTOILLE** | TEE |
-| **Julien PICOT** | HEALTH |
-| **Pierre LENOIR** | TEE |
-| **Mael HUSSANT** | CYBER |
-| **Tristan BLANC** | HEALTH |
+| [**Edouard BOUTOILLE**](https://www.linkedin.com/in/edouard-boutoille/) | TEE |
+| [**Julien PICOT**](https://www.linkedin.com/in/julien-picot/) | HEALTH |
+| [**Pierre LENOIR**](https://www.linkedin.com/in/pierre-l-07b439183/) | TEE |
+| [**Mael HUSSANT**](https://www.linkedin.com/in/mael-hussant/) | CYBER |
+| [**Tristan BLANC**](https://www.linkedin.com/in/tbjl/) | HEALTH |
