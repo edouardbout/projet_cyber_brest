@@ -35,7 +35,7 @@ site_url = "https://edouardbout.github.io/projet_cyber_brest/"
 # Read more: https://zensical.org/docs/setup/basics/#copyright
 #copyright = """
 #Copyright &copy; 2026 — <a href="https://github.com/edouardbout/projet_cyber_brest">Projet cyber S6B2 IMTA</a>
-"""
+#"""
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
 # If you decide not to define a navigation here then Zensical will simply
