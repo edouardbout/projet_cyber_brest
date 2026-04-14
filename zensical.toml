@@ -11,7 +11,7 @@
 # The site_name is shown in the page header and the browser window title
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_name
-site_name = "Documentation projet cyber S6B2 IMTA"
+site_name = "S6B2 Project: Active Directory Simulation & Documentation Portal"
 
 # The site_description is included in the HTML head and should contain a
 # meaningful description of the site content for use by search engines.
@@ -47,8 +47,8 @@ site_url = "https://edouardbout.github.io/projet_cyber_brest/"
 nav = [
   { "Home" = "index.md" },
 
-  { "Généralités" = [
-    { "Support Informatique" = "generalites/support.md" },
+  { "Context" = [
+    { "Qu’est ce qu’Active Directory ?" = "context/ad-explanation.md" },
     { "Marché informatique" = "generalites/marche-informatique6.md" },
     { "Sirepa" = "generalites/sirepa.md" },
     { "Ajout utilisateurs externes" = "generalites/it-users.md" },
