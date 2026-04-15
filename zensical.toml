@@ -51,7 +51,6 @@ nav = [
     { "What is Active Directory ?" = "context/ad-explanation.md" },
     { "Concrete examples" = "context/concrete-examples.md" },
     { "How does ADsimulator work ?" = "context/adsimulator-explanation.md" },
-    { "Sirepa" = "generalites/sirepa.md" },
   ]},
 
   { "Our attacks" = [
@@ -61,7 +60,6 @@ nav = [
     { "The Lateral Admin Movement attack" = "our-attacks/lateral-admin-movement.md" },
     { "The Shadow Admin attack" = "our-attacks/shadow-admin.md" },
     { "The Opportunity Louise attack" = "our-attacks/opportunity-louise.md" },
-    { "Timer systemd" = "attaque/timer-systemd.md" },
   ] },
 
   { "Attacks dataset" = [
@@ -70,7 +68,7 @@ nav = [
 
   { "Game tutorial" = [
     { "Tutorial shortest path" = "game-tutorial/tutorial-v1.md" },
-    { "How create your own attacks?" = "reseau-securite/password-campus.md" },
+    { "How create your own attacks?" = "game-tutorial/own-attack-creation.md" },
   ] },
 
   { "Divers" = [
