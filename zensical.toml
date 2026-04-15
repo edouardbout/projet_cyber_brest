@@ -59,7 +59,7 @@ nav = [
     { "Shortest path" = "attaque/shortest.md" },
     { "Kerberos" = "attaque/kerberos.md" },
     { "Configuration Windows 10" = "attaque/windows10.md" },
-    { "MacOS" = "attaque/macOS.md" },
+    { "Shadow Admin Attack" = "attaque/shadowadmin.md" },
     { "Stockage de ses données" = "attaque/stockage-poste.md" },
     { "Timer systemd" = "attaque/timer-systemd.md" },
   ] },
