@@ -2,86 +2,86 @@
 
 ## Definition
 
-The **Kerberos Adjusted attack** is a simulated attack model that identifies constrained privilege escalation paths in an Active Directory graph.
+The **Kerberos Adjusted attack model** is a simulated graph-based attack scenario used to model constrained privilege escalation paths in an Active Directory environment.
 
-In this project, we define a Kerberos Adjusted path as:
+In this project, a Kerberos Adjusted path is defined as:
 
-> A fixed-length attack chain (4 edges) starting from a standard user, passing through at least one SPN (Service Principal Name) account, and ending at an administrative account.
+> A structured attack chain starting from a standard user, passing through at least one SPN-enabled account, and ending at an administrative account, within a fixed-length traversal of the graph.
 
-This model abstracts a simplified Kerberoasting-like escalation flow, focusing on structured graph traversal rather than cryptographic exploitation.
+This abstraction represents a simplified version of Kerberoasting-like behavior, focusing on graph traversal rather than cryptographic ticket cracking.
 
 ---
 
 ## Theoretical Background
 
-Kerberos is the authentication protocol used in Active Directory to enable secure service authentication through tickets.
+Kerberos is the default authentication protocol used in Active Directory environments to securely authenticate users and services using ticket-based authentication.
+
+It allows users to access services without repeatedly entering credentials, using **Ticket Granting Tickets (TGTs)** and **Service Tickets (TGS)**.
 
 ### SPN Accounts
 
-A Service Principal Name (SPN) identifies a service instance running on a host within Active Directory.
+A **Service Principal Name (SPN)** is an identifier assigned to a service instance running on a specific machine in Active Directory.
 
+SPN accounts are critical in attack modeling because they can be abused in **Kerberoasting scenarios**, where:
+
+- A service ticket is requested for an SPN account  
+- The ticket is extracted by the attacker  
+- The ticket is cracked offline to recover service credentials  
 
 ![SPN Overview](SPN_overview.png)
 
-
-SPN accounts are particularly interesting because they can be abused in **Kerberoasting attacks**, where:
-
-- A service ticket is requested for an SPN account  
-- The ticket is extracted from memory or network traffic  
-- The ticket is cracked offline to recover credentials  
-
-This makes SPN accounts a key pivot in privilege escalation scenarios.
+This makes SPN-enabled accounts a key pivot point in privilege escalation chains.
 
 ---
 
 ## Dataset Specificity
 
-In `Graph_0.json`, the Active Directory environment is simplified:
+In the simulated environment provided by `graph_0.json`, the Active Directory structure is simplified:
 
-- Only a small number of SPN accounts exist (15 detected)
-- The graph is reduced for simulation purposes
+- A limited number of SPN-enabled accounts are present
+- The graph is artificially reduced for analysis purposes
 - Not all users are service-linked
-- Administrative accounts are limited but clearly identifiable
+- Administrative accounts are clearly defined but minimal
 
-This controlled structure allows deterministic analysis of attack paths.
+This controlled structure enables deterministic analysis of attack paths and ensures reproducibility of results.
 
 ---
 
 ## Attack Logic in the Simulator
 
-The detected paths simulate a Kerberos-style attack chain:
+The Kerberos Adjusted attack model follows a structured progression:
 
-1. Initial compromise of a standard user  
-2. Discovery or access to SPN-enabled accounts  
-3. Use or abuse of service ticket mechanisms (abstracted)  
-4. Privilege escalation to an administrative account  
+1. Initial compromise of a standard user account  
+2. Traversal towards SPN-enabled service accounts  
+3. Abuse of service ticket mechanisms (abstracted in the simulation)  
+4. Final privilege escalation to an administrative account  
 
-Each valid path corresponds to a realistic multi-step compromise scenario.
-
----
-
-## Graph-Based Detection Model
-
-The system loads the Active Directory graph from `Graph_0.json` using `networkx`.
-
-- Nodes: Users, Computers, Groups, Service Accounts  
-- Edges: Relationships between entities  
-
-A directed graph is constructed to model attack propagation.
+Each valid path represents a potential multi-step compromise chain in a real Active Directory environment.
 
 ---
 
 ## Detection Constraints
 
-A valid Kerberos Adjusted path must satisfy:
+A valid Kerberos Adjusted path must satisfy the following conditions:
 
-- Start from a **User node**
-- Contain exactly **4 edges (5 nodes total)**
-- Include at least one **SPN account**
-- End at an **administrative node**
+- The path must start from a **User node**
+- The path must contain exactly **4 edges (5 nodes total)**
+- At least one node must be an **SPN-enabled account**
+- The path must terminate at an **administrative account**
+
+These constraints ensure that only realistic and structured escalation paths are considered.
 
 ---
 
-## Implementation Overview
+## Summary
 
-ajout
+![Attack Path Visualization](path_attack_kerb.png)
+
+The implementation identifies all valid Kerberos Adjusted paths in the graph and highlights:
+
+- Entry points (User nodes)
+- SPN pivot nodes
+- Final administrative targets
+- Valid constrained attack chains
+
+This allows systematic analysis of privilege escalation risks within the simulated Active Directory environment.
