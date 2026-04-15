@@ -1,98 +1,88 @@
-# Shortest Path
+# Shortest Path Attack
 
+## Definition
 
-Suite aux travaux de la DISI pour la mise en œuvre d'un nouveau système d'authentification commun avec ex-Mines Nantes (NAD : New Active Directory), l'ancien serveur d'impression //VSS-WINPRINT est remplacé sur le site Brest par : //imp-br-01.ad.imta.fr
+A Shortest Path Attack models an attacker that follows the **minimum number of steps** required to reach a high-value target in Active Directory.
 
-Pour les agents du département MEE travaillant en environnement Linux auto-administré (SALSA) sous Ubuntu 22.04 LTS ou version supérieure, voici une procédure afin d'installer les imprimantes réseau K1 et K2 sur le poste de travail compte tenu du changement dans le système d'information.
+In this project, we define it as:
 
-## Prérequis
+> The shortest valid path between a source node (User or Computer) and an interesting target in the AD graph.
 
+---
 
-Si ce n'est pas déjà fait, installez le paquet `smbclient`. Pour cela, ouvrir un terminal ++ctrl+alt+t++
+## Theoretical Background
 
-```bash
-sudo apt-get update && upgrade
-sudo apt-get install smbclient system-config-printer cups
-```
+In real Active Directory environments, attackers often try to identify the **most efficient privilege escalation route**. Instead of exploring randomly, they look for the path that minimizes the number of actions needed to reach a privileged object.
 
-## Paramètres/Imprimantes/Ajouter une imprimante (connexion au réseau de l'école établie)
+This logic is commonly used in attack graph analysis tools such as BloodHound, where the objective is to identify the **shortest control path** from a compromised principal to a critical target.
 
+### Shortest Privilege Escalation
 
-![Paramètres Imprimantes](../img/imp-ubuntu/imp-ubuntu-01.png#center#shadow)
+A shortest path does not correspond to a specific attack primitive.  
+It is a **graph-based view of attacker efficiency**.
 
-- dans le champ de recherche écrire : smb://imp-br-01.ad.imta.fr
-- une icône nommée "Imp-br-01.ad.imta.fr" apparait sous "CUPS-BRF-Printer"
-- cliquer sur cette icône et sélectionner "Déverrouiller":
+The path may combine:
+- Group memberships (`MemberOf`)
+- ACL permissions (`GenericAll`, `WriteDACL`, `WriteOwner`, `GenericWrite`)
+- Sessions (`HasSession`)
+- Administrative rights on computers (`AdminTo`)
+- Remote access capabilities (`CanRDP`, `CanPSRemote`, `ExecuteDCOM`)
 
+The attacker’s goal is not to follow a specific strategy, but to reach the target with as few steps as possible.
 
-![Déverouiller Imprimantes](../img/imp-ubuntu/imp-ubuntu-02.png#center#shadow)
+### Real-World Context
 
-- Entrer votre identifiant (de compte Campus) précédé de "AD/"
-- Entre votre mot de passe (compte Campus):
+This reflects realistic attacker behavior when:
+- The environment has already been enumerated  
+- The attacker has graph visibility  
+- The goal is to minimize noise and time  
+- The attacker wants the most direct route to privilege  
 
-![Authentification](../img/imp-ubuntu/imp-ubuntu-03.png#center#shadow)
+In that sense, the shortest path is not a distinct attack family, but an **optimization criterion** applied to AD attack paths.
 
-- Une liste des imprimantes réseau gérées par le serveur imp-br-01.ad.imta.fr apparait.
-- Sélectionner l'imprimante désirée (COPIEUR-K1 ou COPIEUR-K2) pour le Dept. MEE :
+### Shortest Path Concept
 
-![Sélectionner Imprimantes](../img/imp-ubuntu/imp-ubuntu-04.png#center#shadow)
+A Shortest Path Attack is therefore:
 
-- Sélectionner le fabricant et le modèle (Richo, MP C3004 EX)[^1] et le pilote version PS :
+> The minimal sequence of reachable AD relationships connecting an entry point to a high-value target.
 
-[^1]: Fabricant et pilote correspondant aux COPIEUR-K1 et COPIEUR-K2. Pour les autres imprimantes du campus de Brest, il faut d'abord aller relever les références du fabricant et du modèle indiqués sur l'imprimante...
+It captures the idea of:
+- Fast escalation  
+- Efficient movement  
+- Minimal operational cost  
 
+---
 
-![Sélectionner le fabricant](../img/imp-ubuntu/imp-ubuntu-05.png#center#shadow)
+## Translation in the Simulator
 
-- Cliquer sur Sélectionner
-- L'imprimante apparait dans Paramètres/Imprimantes, avec le nom par défaut "Ricoh-MP-C3004ex" :
+In the graph model:
+- Nodes represent AD objects  
+- Edges represent relationships between them  
 
-![Imprimante ajoutée](../img/imp-ubuntu/imp-ubuntu-06.png#center#shadow)
+The attack is simulated by:
+- Choosing a source node  
+- Choosing a target of interest  
+- Computing the shortest path in the graph  
 
+This path can then be interpreted as the **most direct attack route** available in the environment.
 
-## Paramétrage de l'imprimante :
+---
 
-- Soit Cliquer sur la petite icône en forme de roue dentée à droite de "Aucune tâche d'impression active"
-- Ou ouvrir le logiciel "Imprimantes" (touche "Windows" puis écrire "imprimantes" pour trouver le logiciel)
-- Modifier le nom par défaut "Ricoh-MP-C3004ex" en "COPIEUR-K1" (par exemple) :
+## Security Impact
 
+Shortest paths are important because:
+- They reveal the **fastest escalation opportunities**  
+- They highlight highly connected or weakly protected objects  
+- Very short paths indicate critical exposure  
 
-![Renommer Imprimante](../img/imp-ubuntu/imp-ubuntu-07.png#center#shadow)
+A target reachable in only one or two steps should be considered especially dangerous.
 
-- Fermer la fenêtre
-- L'imprimante apparait dans Paramètres/Imprimantes, avec le nouveau nom  "COPIEUR-K1" (par exemple)
-- Cliquer sur "Paramètres d'imprimante supplémentaires..."
-- Ouverture d'une fenêtre "Imprimantes - localhost"
-- Faire un clic droit sur COPIEUR-K1 et sélectionner "Propriétés" :
+---
 
+## Summary
 
-![Propriétés Imprimante](../img/imp-ubuntu/imp-ubuntu-08.png#center#shadow)
-
-- Ouverture d'une fenêtre "Propriétés de l'imprimante - << COPIEUR-K1 >> sur localhost"
-- Sélectionner le menu "Paramètres"
-- A droite du champ "URI du périphérique :" cliquer sur "Modifier..."
-
-![Modifier propriétés Imprimante](../img/imp-ubuntu/imp-ubuntu-09.png#center#shadow)
-
-- Ouverture de la fenêtre "Modifier l'URI du périphérique"
-- Sélectionner "Current device"
-
-- Cocher "Demander à l'utilisateur si une authentification est nécessaire" [^2]
-
-[^2]: une authentification sera demandée à chaque envoi de demande d'impression sur le serveur
-
-ou:
-
-- Cocher "Définir maintenant les détails d'authentification" [^3]
-
-[^3]: une authentification sera effectuée automatiquement à chaque demande d'impression
-
-Dans les modes d'authentification [^2] ou [^3], l'utilisateur doit entrer son identifiant de compte campus précédé de "AD/" et son mot de passe de compte campus :
-
-![Authentification](../img/imp-ubuntu/imp-ubuntu-10.png#center#shadow)
-
-- Cliquer sur "Appliquer"
-- Retour à la fenêtre "Imprimantes - localhost"
-- Si plusieurs imprimantes sont enregistrées : clic droit + définir par défaut celle que l'on souhaite utiliser le plus souvent (une icône check de couleur verte est positionnée sur l'imprimante définie par défaut)
-
-![Imprimante par défaut](../img/imp-ubuntu/imp-ubuntu-11.png#center#shadow)
+- Models the **most direct route** to a target  
+- Based on graph distance, not on a specific primitive  
+- Can combine multiple AD relation types  
+- Useful to measure attack efficiency  
+- Helps identify the most exposed privileged targets
