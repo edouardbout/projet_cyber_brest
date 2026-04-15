@@ -10,24 +10,43 @@ In this project, we use a simplified and operational definition:
 
 ---
 
-## Theoretical Background
+## Theoretical Background and real use
 
-In Active Directory, privileges are not only determined by group membership. Control over objects can also be obtained through Access Control Lists (ACLs).
+In real Active Directory environments, administrative privileges are not limited to group membership (e.g., *Domain Admins*). They are determined by **effective permissions**, mainly enforced through Access Control Lists (ACLs) on directory objects.
 
-Key ACL-based permissions include:
-- GenericAll  
-- WriteDACL  
-- WriteOwner  
-- GenericWrite  
+Each object (users, groups, computers, OUs) has a **security descriptor** that defines who can modify it. As a result, having control over an object can be equivalent to owning it.
 
-These permissions allow an attacker to:
+### Control Over Objects
+
+Permissions such as:
+- `GenericAll`  
+- `WriteDACL`  
+- `WriteOwner`  
+- `GenericWrite`  
+
+allow an attacker to:
 - Modify group memberships  
-- Change security descriptors  
-- Take ownership of objects  
-- Indirectly escalate privileges  
+- Change security settings  
+- Take ownership  
+- Alter critical attributes  
 
-Thus, a user does not need to be a member of a privileged group to control it.
+This enables privilege escalation without direct membership in privileged groups.
 
+### Real-World Context
+
+These situations typically arise from:
+- Delegated administration  
+- Misconfigured ACLs  
+- Inherited permissions  
+- Lack of visibility on effective rights  
+
+### Shadow Admin Concept
+
+A *Shadow Admin* is therefore:
+
+> A principal that can indirectly gain administrative control through object-level permissions.
+
+This reflects real-world AD attacks, where attackers look for **control paths** rather than direct roles.
 ---
 
 ## Translation in the Simulator
@@ -98,18 +117,6 @@ PRIVILEGED_GROUPS = {
 ```
 
 
-
-## Detection Strategy
-
-A Shadow Admin can be identified by searching for paths that satisfy the definition.
-
-Basic approach:
-- Compute shortest paths from Users/Computers to privileged groups  
-- Filter paths that:
-  - contain at least one ACL relation  
-  - contain at least one MemberOf or AddMember relation  
-
-This turns the problem into a constrained path search in the graph.
 
 
 ---
