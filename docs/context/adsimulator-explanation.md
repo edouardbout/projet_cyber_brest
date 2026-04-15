@@ -5,13 +5,14 @@
 **ADSimulator is a tool that generates synthetic Active Directory environments as graphs.**
 
 - It creates a realistic but fake Active Directory
-- It stores the data in **Neo4j**
+- It stores the data in Neo4j
 - It simulates:
   - Users
   - Groups
   - Computers
   - Permissions
   - Vulnerabilities
+
 # ADSimulator - Explanation
 
 ## 1. What ADSimulator Is
