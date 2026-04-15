@@ -48,7 +48,7 @@ nav = [
   { "Home" = "index.md" },
 
   { "Context" = [
-    { "Qu’est ce qu’Active Directory ?" = "context/ad-explanation.md" },
+    { "What is Active Directory ?" = "context/ad-explanation.md" },
     { "Marché informatique" = "generalites/marche-informatique6.md" },
     { "Sirepa" = "generalites/sirepa.md" },
     { "Ajout utilisateurs externes" = "generalites/it-users.md" },
