@@ -49,55 +49,28 @@ nav = [
 
   { "Context" = [
     { "What is Active Directory ?" = "context/ad-explanation.md" },
-    { "Marché informatique" = "generalites/marche-informatique6.md" },
+    { "Concrete examples" = "context/concrete-examples.md" },
+    { "How does ADsimulator work ?" = "context/adsimulator-explanation.md" },
     { "Sirepa" = "generalites/sirepa.md" },
-    { "Ajout utilisateurs externes" = "generalites/it-users.md" },
   ]},
 
-  { "Nos Attaques" = [
-    { "Création des attaques" = "attaque/creation.md" },
-    { "Shortest path" = "attaque/shortest.md" },
-    { "Kerberos" = "attaque/kerberos.md" },
-    { "Configuration Windows 10" = "attaque/windows10.md" },
-    { "Shadow Admin Attack" = "attaque/shadowadmin.md" },
-    { "Stockage de ses données" = "attaque/stockage-poste.md" },
+  { "Our attacks" = [
+    { "The methodology" = "our-attacks/the-methodology.md" },
+    { "The Shortest Path attack" = "our-attacks/shortest-path.md" },
+    { "The Kerberosting attack" = "our-attacks/kerberosting.md" },
+    { "The Lateral Admin Movement attack" = "our-attacks/lateral-admin-movement.md" },
+    { "The Shadow Admin attack" = "our-attacks/shadow-admin.md" },
+    { "The Opportunity Louise attack" = "our-attacks/opportunity-louise.md" },
     { "Timer systemd" = "attaque/timer-systemd.md" },
   ] },
 
-  { "HPC Computing" = [
-    { "Minos - MEE HPC" = "calcul/minos.md" },
-    { "Slurm Overview" = "calcul/slurm-overview.md" },
-    { "Slurm Quickstart" = "calcul/slurm-getting-started.md" },
-    { "Slurm Commands" = "calcul/slurm-commands.md" },
-    { "Slurm Common Usage" = "calcul/slurm-common-usage.md" },
-    { "Slurm Tips" = "calcul/slurm-tips.md" },
-    { "Slurm FAQ" = "calcul/slurm-faq.md" },
-    { "MEE Servers" = "calcul/servers-mee.md" },
-    { "Data Storage" = "calcul/storage.md" },
-    { "Software Licenses" = "calcul/licences-logicielles.md" },
-    { "CAD Tools" = "calcul/outils.md" },
-    { "SSH" = "calcul/connexion.md" },
-    { "Tmux" = "calcul/tmux.md" },
-    { "Using HPC Jean Zay" = "calcul/guide-jean-zay.md" },
-    { "Using Datarmor (ODYSSEY)" = "calcul/guide-datarmor.md" },
-    { "Stockage Wasabi (ODYSSEY)" = "calcul/wasabi.md" },
-    { "Gérer des Environments Python" = "calcul/python-env.md" },
-    { "Gérer des package Python" = [
-      { "Principe" = "calcul/python-package/introduction.md" },
-      { "Builder avec Build et Twine" = "calcul/python-package/build-twine.md" },
-      { " Le mode développement" = "calcul/python-package/development-mode.md" },
-      { "Publier sur PyPI" = "calcul/python-package/pypi.md" },
-      { "Utiliser un package" = "calcul/python-package/usage.md" },
-    ]},
+  { "Attacks dataset" = [
+    { "dataset generation methodology" = "attacks-dataset/dataset-methodology.md" },
   ] },
 
-  { "Réseau et sécurité" = [
-    { "Configurer son VPN" = "reseau-securite/vpn.md" },
-    { "Gérer son mot de passe Campus" = "reseau-securite/password-campus.md" },
-    { "Gérer ses mots de passe avec Keepass" = "reseau-securite/keepass.md" },
-    { "Authentification Double facteur - 2FA" = "reseau-securite/2fa.md" },
-    { "Sécuriser Firefox" = "reseau-securite/firefox.md" },
-    { "Configurer le Wifi invité" = "reseau-securite/wifi-invite.md" },
+  { "Game tutorial" = [
+    { "Tutorial shortest path" = "game-tutorial/tutorial-v1.md" },
+    { "How create your own attacks?" = "reseau-securite/password-campus.md" },
   ] },
 
   { "Divers" = [
