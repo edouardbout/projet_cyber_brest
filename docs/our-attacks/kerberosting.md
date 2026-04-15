@@ -75,7 +75,7 @@ These constraints ensure that only realistic and structured escalation paths are
 
 ## Summary
 
-![Attack Path Visualization](path_attack_kerb.png)
+![Attack Path Visualization](../images/our-attacks/kerberosting/visu_kerberos.png)
 
 The implementation identifies all valid Kerberos Adjusted paths in the graph and highlights:
 
