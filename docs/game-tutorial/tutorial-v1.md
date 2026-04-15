@@ -48,9 +48,9 @@ The controller offers several modes to analyze attack paths:
 
 The **Defense simulator** mode provides an interactive way to evaluate the effectiveness of your defense strategies.
 
-![image 4](../images/game-tutorial/tutorial-v1/Capture d’écran 2026-04-15 à 17.03.06.png)
+![image 4](../images/game-tutorial/tutorial-v1/Capture d’écran 2026-04-15 à 17.04.19.png)
 
-![image 5](../images/game-tutorial/tutorial-v1/Capture d’écran 2026-04-15 à 17.04.19.png)
+![image 5](../images/game-tutorial/tutorial-v1/Capture d’écran 2026-04-15 à 17.03.06.png)
 
 ### How to use it
 

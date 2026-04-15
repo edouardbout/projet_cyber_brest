@@ -67,7 +67,7 @@ nav = [
   ] },
 
   { "Game tutorial" = [
-    { "Tutorial shortest path" = "game-tutorial/tutorial-v1.md" },
+    { "Visualisation tutorial" = "game-tutorial/tutorial-v1.md" },
     { "How create your own attacks?" = "game-tutorial/own-attack-creation.md" },
   ] },
 
