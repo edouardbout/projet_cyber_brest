@@ -1,5 +1,10 @@
 # MINOS: Mee hIgh performaNce cOmputing System
 
+
+## Interactive Graph
+
+<iframe src="../images/shadowtest.html" width="100%" height="700px"></iframe>
+
 Support : minos-support@imt-atlantique.fr
 
 The demand for computational power, especially for GPUs, and data storage, continues to grow each year. Meeting these needs is increasingly challenging, with limited budgets. And disparities in ressources access between teams sometimes lead to tension.
