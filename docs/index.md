@@ -6,7 +6,7 @@ Welcome to the official documentation of the **S6B2 Cyber Project** at IMT Atlan
 
 ## Project Context
 
-This project was commissioned by **Alexandre REIFFERS-MASON**, Researcher and Professor at **IMT Atlantique**. 
+This project was commissioned by **Alexandre REIFFERS-MASSON**, Researcher and Professor at **IMT Atlantique**. 
 
 Our work is built upon the foundations of the [**Markov_Budget**](https://github.com/Lilianltd/Markov_Budget/) project. The original pipeline focuses on:
 

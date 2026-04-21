@@ -4,8 +4,6 @@
 **Active Directory (AD)** is a directory service developed by Microsoft since 1999 for Windows Server environments. It provides a centralized structure for managing identities, computers, and network resources within an organization.
 In a modern enterprise, Active Directory is almost always present.
 
-![AD graph](../images/context/ad-explanation/simplified-visual-of-active-directory.png)
-
 ---
 
 ## Main Roles
