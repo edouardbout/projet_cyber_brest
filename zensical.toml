@@ -48,9 +48,9 @@ nav = [
   { "Home" = "index.md" },
 
   { "Context" = [
-    { "What is Active Directory ?" = "context/ad-explanation.md" },
+    { "Active Directory explanation" = "context/ad-explanation.md" },
     { "Concrete examples" = "context/concrete-examples.md" },
-    { "How does ADsimulator work ?" = "context/adsimulator-explanation.md" },
+    { "ADsimulator explanation" = "context/adsimulator-explanation.md" },
   ]},
 
   { "Our attacks" = [
@@ -135,7 +135,7 @@ extra_css = ["stylesheets/extra.css"]
 # - https://zensical.org/docs/setup/logo-and-icons/#favicon
 # - https://developer.mozilla.org/en-US/docs/Glossary/Favicon
 #
-favicon = "assets/h-imtatlantique-rf-rvb.png"
+favicon = "assets/logo-imtatlantique-rvb.png"
 
 # Zensical supports more than 60 different languages. This means that the
 # labels and tooltips that Zensical's templates produce are translated.
