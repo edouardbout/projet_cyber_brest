@@ -3,7 +3,7 @@
 
 ## Interactive Graph
 
-<iframe src="../images/shadowtest.html" width="100%" height="700px"></iframe>
+<iframe src="/images/shadowtest.html" width="100%" height="700px"></iframe>
 
 Support : minos-support@imt-atlantique.fr
 
