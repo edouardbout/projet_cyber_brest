@@ -15,7 +15,7 @@ This first example demonstrates that a successful intrusion does not always requ
 
 ---
 
-## Exemple 2 : The network map handed over in plain sight
+## Example 2 : The network map handed over in plain sight
 **Theme: Passive reconnaissance and service account exploitation.**
 
 This second scenario shows how a user with very limited privileges (an intern) can map an entire infrastructure by consulting standard system files, leading to the compromise of critical backups.

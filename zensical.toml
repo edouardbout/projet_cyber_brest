@@ -51,19 +51,20 @@ nav = [
     { "Active Directory explanation" = "context/ad-explanation.md" },
     { "Concrete examples" = "context/concrete-examples.md" },
     { "ADsimulator explanation" = "context/adsimulator-explanation.md" },
+    { "Glossary" = "context/glossary.md" },
   ]},
 
-  { "Our attacks" = [
-    { "The methodology" = "our-attacks/the-methodology.md" },
-    { "The Shortest Path attack" = "our-attacks/shortest-path.md" },
-    { "The Kerberosting attack" = "our-attacks/kerberosting.md" },
-    { "The Lateral Admin Movement attack" = "our-attacks/lateral-admin-movement.md" },
-    { "The Shadow Admin attack" = "our-attacks/shadow-admin.md" },
-    { "The Opportunity Louise attack" = "our-attacks/opportunity-louise.md" },
+  { "Create your own attack" = [
+    { "Step 1 : generate the graph" = "create-your-own-attack/generate-graph.md" },
   ] },
 
-  { "Attacks dataset" = [
-    { "dataset generation methodology" = "attacks-dataset/dataset-methodology.md" },
+  { "Attacks examples" = [
+    { "The Phishing attack" = "attacks-examples/phising.md" },
+    { "The Shortest Path attack" = "attacks-examples/shortest-path.md" },
+    { "The Kerberosting attack" = "attacks-examples/kerberosting.md" },
+    { "The Lateral Admin Movement attack" = "attacks-examples/lateral-admin-movement.md" },
+    { "The Shadow Admin attack" = "attacks-examples/shadow-admin.md" },
+    { "The Opportunity Louise attack" = "attacks-examples/opportunity-louise.md" },
   ] },
 
   { "Game tutorial" = [
