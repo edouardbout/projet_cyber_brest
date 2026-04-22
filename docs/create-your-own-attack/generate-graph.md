@@ -1,37 +1,196 @@
-# MINOS: Mee hIgh performaNce cOmputing System
+# Configuration and Generation of an Active Directory Graph
+
+## Objective
+On this page, we will focus on explaining how our graph_0.json file was designed and implemented, detailing the steps and choices made to build a simulated Active Directory environment.
+
+---
+
+# Step 1 — Environment Setup
+ Installing Neo4j
+
+Neo4j is used to generate and manipulate the graph.
+
+```python
+NEO4J_VERSION="5.18.0"
+rm -rf neo4j_local
+
+wget https://neo4j.com/artifact.php?name=neo4j-community-$NEO4J_VERSION-unix.tar.gz -O neo4j.tar.gz
+tar -xzf neo4j.tar.gz
+mv neo4j-community-$NEO4J_VERSION neo4j_local
+rm neo4j.tar.gz
+```
+
+## Installing the APOC Plugin
+```python
+wget https://github.com/neo4j/apoc/releases/download/$NEO4J_VERSION/apoc-$NEO4J_VERSION-core.jar -P neo4j_local/plugins/
+```
 
 
-## Interactive Graph
+## Installing Python Dependencies
+```python
+pip install pyvis ipywidgets
+```
+ ---
 
-## Interactive Graph
+# Step 2 — Dataset Configuration
+The dataset is generated from a configuration dictionary.
 
-<iframe
-  src="./shadowtest.html"
-  width="100%"
-  height="700px"
-  style="border:none; border-radius:12px;">
-</iframe>
+## Global Structure
+Each section corresponds to an Active Directory component:
+- Domain
+- Computer
+- User
+- Group
+- ACLs
+- OU
 
-Support : minos-support@imt-atlantique.fr
+## Component Description
+### Domain
+- Windows Server version
+- Trust relationships
+- Defines the overall security level
+### Computer
+- Number of machines
+- Operating systems
+- Possible access methods (RDP, PowerShell…)
+### User
+- Number of users
+- Sensitive properties (SPN, delegation…)
+### Group
+- Security groups
+- Relationships between groups
+### ACLs
+Permissions between objects, such as:
+- GenericAll
+- WriteDacl
+- ForceChangePassword
 
-The demand for computational power, especially for GPUs, and data storage, continues to grow each year. Meeting these needs is increasingly challenging, with limited budgets. And disparities in ressources access between teams sometimes lead to tension.
 
-Large computing centers exist, such as [Jean-Zay](http://www.idris.fr/jean-zay/) or [Datarmor](https://www.ifremer.fr/fr/infrastructures-de-recherche/le-supercalculateur-datarmor) supercalculators. But access to them is often complex and restrictive.
+## Example Configuration
+```python
+config = {
+    "Domain": {"functionalLevelProbability": {"2016": 100}},
+    "Computer": {"nComputers": 5},
+    "User": {"nUsers": 5},
+    "Group": {"nGroups": 2},
+    "OU": {"nOUs": 5},
+    "ACLs": {"ACLsProbability": {"GenericAll": 0}}
+}
+```
+---
 
-To address these challenges, the **MINOS (Mee hIgh performaNce cOmputing System)** environment was created as an intermediate computing center for MEE.
+# Step 3 — Graph Generation
 
-MINOS is designed to bridge the gap between personal workstations and major HPC centers, offering easier access, greater flexibility, and a more personalized experience.
+## Running the Pipeline
+```python
+adsim_utils.run_pipeline(0, custom_config=config)
+```
+## Generated Outputs
+The pipeline produces:
+- graph_0.json → raw graph
+- graph_0_structured.json → structured graph
+- other intermediate files
+
+## Graph Structure
+Nodes
+```python
+{
+  "type": "node",
+  "labels": ["User"],
+  "properties": {...}
+}
+  Relationships
+{
+  "type": "relationship",
+  "label": "AdminTo"
+}
+```
+
+---
+
+# Step 4 — Graph Visualization
+## Objective
+- Understand graph structure
+- Analyze relationships
+- Identify attack paths
+
+## Graph Organization
+The graph is organized in concentric layers:
+- Center → Domain
+- Level 1 → OU / GPO
+- Level 2 → Groups
+- Level 3 → Machines
+- Level 4 → Users
+
+## Interactive Visualization
+
+![Graph_0_visu](../images/create-your-own-attack/graph-generation/Image_graph0.png)
+
+---
+
+# Step 5 — Adding Probabilities
+## Objective
+Transform the graph into a probabilistic model:
+```python
+graph_0_probs.json
+```
+
+### Edge Probabilities
+They represent exploitation difficulty:
+- GenericAll → very easy
+- AdminTo → very high
+- indirect access → lower
+
+### Node Probabilities
+They represent criticality:
+- User → high compromise probability
+- Computer → medium
+- Domain → low (well protected)
+
+### Generation Script
+```python
+EDGE_PROB = {
+    "AdminTo": 0.95,
+    "CanRDP": 0.8,
+    "GenericAll": 1.0
+}
+
+NODE_PROB = {
+    "User": 1.0,
+    "Computer": 0.8,
+    "Domain": 0.5
+}
+```
+### Result
+Each graph element now includes a probability:
+```python
+{
+  "type": "node",
+  "prob": 0.8
+}
+```
+## Global Interpretation
+
+The full pipeline transforms:
+
+Simulated environment
+        ↓
+      Graph
+        ↓
+Probabilistic graph
 
 
-MINOS uses computational mechanisms similar to those found in leading HPC centers, making it easier for users to transition to larger facilities when needed.
+# Applications
+This model allows you to:
+- Identify attack paths
+- Measure risk levels
+- Simulate realistic attack scenarios
 
-By centralizing and optimizing resource management, MINOS enables efficient sharing and pooling of investments across MEE, while simplifying administration for technical teams.
+---
 
-
-All MEE servers are integrated into MINOS. *[Full list of MEE servers here](servers-mee.md)*
-
-MINOS uses the job orchestrator **SLURM**, a system widely adopted by major HPC centers.
-For more information, See *[Slurm Overview](./slurm-overview.md)*.
-
-
-MINOS is a collaborative initiative within MEE. If you require specific adaptations, new features, or wish to contribute, your input is welcome. Feel free to reach out to the team to discuss your needs or ideas.
+# Conclusion
+This workflow provides a complete approach to:
+- Model an Active Directory environment
+- Visualize complex relationships
+- Introduce probabilistic reasoning
+- Perform advanced security analysis
