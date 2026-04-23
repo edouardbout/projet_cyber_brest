@@ -2,7 +2,7 @@
 
 Welcome to the official documentation of the **S6B2 Cyber Project** at IMT Atlantique. Our mission is to transform complex Active Directory (AD) attack path simulations into a visual, interactive, and educational experience.
 
-![Image logo cyber](../assets/Projet_Cyber.png)
+![Image logo cyber](assets/Projet_Cyber.png)
 
 ---
 
@@ -44,4 +44,4 @@ We are 5 students from IMT Atlantique, dedicated to this one month project:
 | [**Mael HUSSANT**](https://www.linkedin.com/in/mael-hussant/) | CYBER |
 | [**Tristan BLANC**](https://www.linkedin.com/in/tbjl/) | HEALTH |
 
-![Image équipe](../assets/image_page_accueil.jpeg)
+![Image équipe](assets/image_page_accueil.jpeg)
