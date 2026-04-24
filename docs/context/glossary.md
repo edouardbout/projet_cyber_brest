@@ -83,7 +83,7 @@ They define **who can access what**, **who controls whom**, and ultimately **how
 
 ---
 
-## 🔸 Security Principal → Group
+## Security Principal → Group
 
 | Edge | Simple Definition | Concrete Example | Building Analogy |
 |------|------------------|------------------|------------------|
