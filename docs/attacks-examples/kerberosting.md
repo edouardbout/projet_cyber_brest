@@ -72,13 +72,13 @@ The function returns:
 
 ### Example of output
 
-![Kerberos Adjusted Path](../images/attacks-examples/kerberosting/visu_kerberos.png)
+ ![Visualisation Kerberosting](../images/attacks-examples/kerberosting/visu_kerberoasting.png)
+
+![Légende Kerberosting](../images/attacks-examples/kerberosting/legend_kerberoasting.png)
 
 ## Technical Reference
 
 For more details on the implementation, you can click on this link:
-
-
 
 [** attacks creation python module **](https://github.com/Maelh1/Markov_Budget/blob/main/adsimulator_graph_generator/src/attacks.py)
 

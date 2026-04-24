@@ -65,15 +65,11 @@ In other words, a Security Principal is **not a new type of node**, but a way to
 In an Active Directory graph, **edges represent relationships between nodes**.  
 They define **who can access what**, **who controls whom**, and ultimately **how an attacker can move inside the system**.
 
----
-
 ## Domain/OU → OU or Domain/OU → Security Principal
 
 | Edge | Simple Definition | Concrete Example | Building Analogy |
 |------|------------------|------------------|------------------|
 | `Contains` | A container holds other objects | A Domain contains OUs; an OU contains users and computers | A building contains floors and rooms |
-
----
 
 ## Domain → Domain
 
@@ -81,16 +77,12 @@ They define **who can access what**, **who controls whom**, and ultimately **how
 |------|------------------|------------------|------------------|
 | `TrustedBy` | One domain trusts another for authentication | Users from Domain B can access resources in Domain A | Two buildings with shared access agreements |
 
----
-
 ## Security Principal → Group
 
 | Edge | Simple Definition | Concrete Example | Building Analogy |
 |------|------------------|------------------|------------------|
 | `MemberOf` | A user or computer belongs to a group | User "jdoe" is in "IT Admins" | A person is part of a team |
 | `AddMember` | Permission to add members to a group | A user can add others to "Admins" | Someone who distributes access badges |
-
----
 
 ## Security Principal → Computer
 
@@ -101,15 +93,11 @@ They define **who can access what**, **who controls whom**, and ultimately **how
 | `CanRDP` | Remote desktop access | Login to a server via RDP | A remote entry door |
 | `ExecuteDCOM` | Execute remote commands via DCOM | Run code remotely on a machine | A hidden maintenance access |
 
----
-
 ## User → Computer
 
 | Edge | Simple Definition | Concrete Example | Building Analogy |
 |------|------------------|------------------|------------------|
 | `HasSession` | A user has an active session on a computer | Admin logged into a workstation | A person currently inside a room |
-
----
 
 ## ACLs (Access Control Permissions)
 
@@ -127,8 +115,6 @@ They define **who can access what**, **who controls whom**, and ultimately **how
 | `Owns` | Ownership of an object | Own a group or resource | Legal owner of a room |
 | `WriteDacl` | Modify access control lists | Change permissions on an object | Edit the access list |
 | `WriteOwner` | Change ownership of an object | Take ownership of a resource | Transfer property ownership |
-
----
 
 ## GPO → Domain/OU
 

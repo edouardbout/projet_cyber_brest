@@ -76,15 +76,12 @@ The function returns:
 - Short and long opportunistic paths  
 - Source → target chains discovered randomly  
 
-## Example
+### Example of output
 
-```python
-Source   : USER_A
-Target   : DOMAIN ADMINS
-Length   : 3
-Path     :
-USER_A → Computer_X → USER_B → DOMAIN ADMINS
-```
+ ![Visualisation louise attack](../images/attacks-examples/opportunity-louise/Opportunity1.png)
+
+![Légende louise attack](../images/attacks-examples/opportunity-louise/Opportunity2.png)
+
 ## Technical Reference
 
 For more details on the implementation, you can click on this link:

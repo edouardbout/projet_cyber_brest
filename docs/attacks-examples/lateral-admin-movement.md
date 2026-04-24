@@ -77,15 +77,11 @@ The function returns:
 - Chains combining sessions, admin rights, and remote access  
 - Structured paths leading to privileged targets  
 
-## Example
+### Example of output
 
-```python
-Source   : COMP_A (Computer)
-Target   : ADMINISTRATORS
-Length   : 6
-Path     :
-COMP_A → User_X → Group_Y → COMP_B → User_Z → DOMAIN ADMINS → ADMINISTRATORS
-```
+ ![Visualisation Lateral Movment](../images/attacks-examples/lateral-admin-movement/Lateral1.png)
+
+![Légende Lateral Movment](../images/attacks-examples/lateral-admin-movement/Lateral2.png)
 
 ## Technical Reference
 
