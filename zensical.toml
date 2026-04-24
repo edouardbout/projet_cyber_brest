@@ -56,6 +56,7 @@ nav = [
 
   { "Create your own attack" = [
     { "Step 1 : generate the graph" = "create-your-own-attack/generate-graph.md" },
+    { "Step 3 : Générate a new dataset" = "context/attackgen.md" }
   ] },
 
   { "Attacks examples" = [
