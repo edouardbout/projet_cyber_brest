@@ -87,8 +87,8 @@ They define **who can access what**, **who controls whom**, and ultimately **how
 
 | Edge | Simple Definition | Concrete Example | Building Analogy |
 |------|------------------|------------------|------------------|
-| **MemberOf** | A user or computer belongs to a group | User "jdoe" is in "IT Admins" | A **person is part of a team** |
-| **AddMember** | Permission to add members to a group | A user can add others to "Admins" | Someone who **distributes access badges** |
+| `MemberOf` | A user or computer belongs to a group | User "jdoe" is in "IT Admins" | A person is part of a team |
+| `AddMember` | Permission to add members to a group | A user can add others to "Admins" | Someone who distributes access badges |
 
 ---
 
@@ -98,7 +98,7 @@ They define **who can access what**, **who controls whom**, and ultimately **how
 |------|------------------|------------------|------------------|
 | `AdminTo` | Full administrative control over a computer | User is admin on a server | A master key holder |
 | `CanPSRemote` | Execute commands remotely via PowerShell | Run remote commands on a machine | A remote control system |
-| `CanRDP` | Remote desktop access | Login to a server via RDP | A **remote entry door** |
+| `CanRDP` | Remote desktop access | Login to a server via RDP | A remote entry door |
 | `ExecuteDCOM` | Execute remote commands via DCOM | Run code remotely on a machine | A hidden maintenance access |
 
 ---
@@ -107,7 +107,7 @@ They define **who can access what**, **who controls whom**, and ultimately **how
 
 | Edge | Simple Definition | Concrete Example | Building Analogy |
 |------|------------------|------------------|------------------|
-| **HasSession** | A user has an active session on a computer | Admin logged into a workstation | A person currently inside a room |
+| `HasSession` | A user has an active session on a computer | Admin logged into a workstation | A person currently inside a room |
 
 ---
 
@@ -134,7 +134,7 @@ They define **who can access what**, **who controls whom**, and ultimately **how
 
 | Edge | Simple Definition | Concrete Example | Building Analogy |
 |------|------------------|------------------|------------------|
-| `GpLink` | Links a GPO to a Domain or OU | Apply a policy to all machines in an OU | Apply **rules to a floor** |
+| `GpLink` | Links a GPO to a Domain or OU | Apply a policy to all machines in an OU | Apply rules to a floor |
 
 ---
 
