@@ -68,9 +68,11 @@ This block allows you to:
 - Intermediate privilege escalation steps
 - Visual representation of attack chains
 
-## Exemple of output 
+### Example of output
 
-![Shadow Admin Path](../assets/shadowtest.jpeg)
+ ![Visualisation shadow admin](../images/attacks-examples/shadow-admin/Shadow1.png)
+
+![Légende shadow admin](../images/attacks-examples/opportunity-louise/Opportunity2.png)
 
 # Technical Reference
 

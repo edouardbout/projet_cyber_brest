@@ -72,7 +72,9 @@ The function returns:
 
 ### Example of output
 
-![Kerberos Adjusted Path](../images/attacks-examples/kerberosting/visu_kerberos.png)
+ ![Visualisation Kerberosting](../images/attacks-examples/kerberosting/visu_kerberoasting.png)
+
+![Légende Kerberosting](../images/attacks-examples/kerberosting/legend_kerberoasting.png)
 
 ## Technical Reference
 
