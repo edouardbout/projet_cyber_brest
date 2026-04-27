@@ -11,7 +11,7 @@
 # The site_name is shown in the page header and the browser window title
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_name
-site_name = "S6B2 Project: Active Directory attacks simulator"
+site_name = "S6B2 Cyber Project: Active Directory attacks simulator"
 
 # The site_description is included in the HTML head and should contain a
 # meaningful description of the site content for use by search engines.
@@ -56,7 +56,6 @@ nav = [
 
   { "Create your own attack" = [
     { "Step 1 : generate the graph" = "create-your-own-attack/generate-graph.md" },
-    { "Step 3 : Générate a new dataset" = "create-your-own-attack/attackgen.md" }
   ] },
 
   { "Attacks examples" = [
